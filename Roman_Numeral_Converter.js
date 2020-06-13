@@ -25,19 +25,29 @@ function convertToRoman(num) {
 
     //push the tens digit to romanarr, if any
     if (firststr.length >= 2)
-        {romanarr.unshift(tens[firststr[firststr.length-2]])}
+        {romanarr.unshift(tens[firststr[firststr.length-2]]);}
     //
 
     //push the hundreds digit to romanarr, if any
     if (firststr.length >= 3)
-        {romanarr.unshift(hundreds[firststr[firststr.length-3]])}
+        {romanarr.unshift(hundreds[firststr[firststr.length-3]]);}
     //
 
-    //get the rest digits string if any
-    if (numstr.length >= 4) { //if any
-        let secondstr = numstr.substring(0,numstr.length - 3) //extract 2nd string done
+    //if have thousands and more, otherwise no need
+    if (numstr.length >= 4) {
+    //get the rest digits into string if any
+        let secondstr = numstr.substring(0,numstr.length - 3); //extract 2nd string done
+    //
+    
+    // push the rest digits as X number of M into romanarr
+        let secondnum = parseInt(secondstr); //make it number first
+    
+        for (let i = 1; i <= secondnum; i++) //push
+            {romanarr.unshift("M");}
     }
     //
+
+    return romanarr.join(""); //make it string again and return final answer
    }
    
    convertToRoman(36);
