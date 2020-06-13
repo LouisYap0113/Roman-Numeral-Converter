@@ -17,6 +17,22 @@ function convertToRoman(num) {
     let firststr = numstr.match(regex)[0]; //extract done
     //
 
+    let romanarr = []; //create an empty array
+
+    //push the ones digit to romanarr
+    romanarr.unshift(ones[firststr[firststr.length-1]]);
+    //
+
+    //push the tens digit to romanarr, if any
+    if (firststr.length >= 2)
+        {romanarr.unshift(tens[firststr[firststr.length-2]])}
+    //
+
+    //push the hundreds digit to romanarr, if any
+    if (firststr.length >= 3)
+        {romanarr.unshift(hundreds[firststr[firststr.length-3]])}
+    //
+
     //get the rest digits string if any
     if (numstr.length >= 4) { //if any
         let secondstr = numstr.substring(0,numstr.length - 3) //extract 2nd string done
