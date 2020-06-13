@@ -1,6 +1,6 @@
 function convertToRoman(num) {
     //if num equal 0, return nulla
-    if (num === 0){return nulla;}
+    if (num === 0){return 'nulla';}
     //
     
     let ones = {1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI',7:'VII',8:'VIII',9:'IX'};
@@ -49,6 +49,7 @@ function convertToRoman(num) {
 
     return romanarr.join(""); //make it string again and return final answer
    }
-   
-   convertToRoman(36);
+
+/*debugging done. Converter works for any whole number. Description attached.
+  May not be the same as original method, since improvement is made when coding.*/
    
